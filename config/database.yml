@@ -16,7 +16,6 @@ development:
   pool: 5
   username: root
   password: root
-  socket: /tmp/mysql.sock
   host: localhost
 
 
@@ -30,9 +29,9 @@ test:
   database: payforme_test
   pool: 5
   username: root
-  password: root
-  socket: /tmp/mysql.sock
   host: localhost
+  password:
+
 
 production:
   adapter: mysql2
@@ -42,5 +41,4 @@ production:
   pool: 5
   username: root
   password: root
-  socket: /tmp/mysql.sock
   host: localhost
