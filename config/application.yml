@@ -3,6 +3,9 @@ defaults: &defaults
   sphere:
     client_id: 'fJVOsIBb4cQ8ShBJbjIFghUR'
     client_secret: 'A5QTCj1OnhTK6jNAjH1KAsaJp3J9t3Zl'
+  mailjet:
+    client_id: '0dfab62840924da7708f42de91bbbbc4'
+    client_secret: '1f83f7ca104199827e0ca980dbe35179'
 
 development:
   <<: *defaults
