@@ -50,8 +50,14 @@ Payforme::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'payments#index'
-  match 'payments/:id/charge' => 'payments#charge'
+#  match 'payments/:id/charge' => 'payments#charge'
+
+  match 'payments/:token/:paymill_token' => 'payments#store_token'
   
+  match 'payments/:token' => 'payments#show'
+
+
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

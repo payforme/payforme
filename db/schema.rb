@@ -11,20 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423124021) do
+ActiveRecord::Schema.define(:version => 20130423202957) do
 
   create_table "payments", :force => true do |t|
-    t.string   "shpere_id"
+    t.string   "sphere_id"
     t.string   "payers_mail"
     t.string   "payers_name"
     t.integer  "shop_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "token"
   end
 
   create_table "shops", :force => true do |t|
     t.string   "name"
-    t.string   "shop_token"
+    t.string   "project_key"
     t.string   "sphere_token"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

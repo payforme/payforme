@@ -1,0 +1,68 @@
+hallo: <%= @payment.payers_name %>
+<br>
+<div class="payment-errors">errors? </div>
+<script type="text/javascript">
+  var PAYMILL_PUBLIC_KEY = "<%= Settings.paymill.client_id%>";
+</script>
+<script type="text/javascript" src="https://bridge.paymill.com/"></script>
+
+<form id="payment-form" action="#" method="POST">
+
+  <input class="card-amount-int" type="hidden" value="<%= @amount %>" />
+  <input class="card-currency" type="hidden" value="<%= @curr %>" />
+
+  <div class="form-row"><label>Card number</label>
+    <input class="card-number" type="text" size="20" required /></div>
+
+  <div class="form-row"><label>CVC</label>
+    <input class="card-cvc" type="text" size="4" required /></div>
+
+  <div class="form-row"><label>Name</label>
+    <input class="card-holdername" type="text" size="4" /></div>
+
+  <div class="form-row"><label>Expiry date (MM/YYYY)</label>
+    <input class="card-expiry-month" type="text" size="2" required/>
+    <span></span>
+    <input class="card-expiry-year" type="text" size="4" required/></div>
+
+
+  <button class="submit-button" type="submit">Submit</button>
+
+</form>
+
+<script>
+$(document).ready(function() {
+  $("#payment-form").submit(function(event) {
+    // Deactivate submit button to avoid further clicks
+    $('.submit-button').attr("disabled", "disabled");
+
+    paymill.createToken({
+      number: $('.card-number').val(),  // required, ohne Leerzeichen und Bindestriche
+      exp_month: $('.card-expiry-month').val(),   // required
+      exp_year: $('.card-expiry-year').val(),     // required, vierstellig z.B. "2016"
+      cvc: $('.card-cvc').val(),                  // required
+      amount_int: $('.card-amount-int').val(),    // required, integer, z.B. "15" für 0,15 Euro 
+      currency: $('.card-currency').val(),    // required, ISO 4217 z.B. "EUR" od. "GBP"
+      cardholder: $('.card-holdername').val() // optional
+    }, PaymillResponseHandler);                   // Info dazu weiter unten
+
+    return false;
+  });
+
+  function PaymillResponseHandler(error, result) {
+  if (error) {
+    // Shows the error above the form
+    $(".payment-errors").text(error.apierror);
+    $(".submit-button").removeAttr("disabled");
+  } else {
+    var form = $("#payment-form");
+    // Output token
+    var token = result.token;
+    // Insert token into form in order to submit to server
+    window.location = "/payment/<%= @payment.token %>/token/" + token;
+//    form.append("<input type='hidden' name='paymillToken' value='" + token + "'/>");
+  }
+}
+});
+</script>
+
