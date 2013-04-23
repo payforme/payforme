@@ -1,7 +1,8 @@
 class UserMailer < ActionMailer::Base
   default :from => "me@nicolasgrenie.com"
 
-  def email_to_mom(email, orders)
+  def email_to_mom(email, payment)
+    @payment = payment
     begin
       mail(:to => email, :subject => "Pay4Me request") do |format|
         format.text

@@ -9,13 +9,9 @@ class PayformeController < ApplicationController
     o_id = params['orderId']
     p = params['projectKey']
 
-    client_id = Settings.sphere.client_id
-    client_secret = Settings.sphere.client_secret
-    t = Sphere.login client_id, client_secret, p
+    order = Order.new(p, o_id)
 
-    order = Sphere.get_order t, p, o_id
-
-    m = UserMailer.email_to_mom e, order
+    m = UserMailer.email_to_mom(e, payment)
     m.deliver
 
     respond_to do |format|
