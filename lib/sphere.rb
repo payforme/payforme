@@ -1,7 +1,7 @@
 require 'excon'
 require 'json'
 
-module Sphere
+class Sphere
 
   def self.login(client_id, client_secret, project_key)
     encoded = Base64.urlsafe_encode64 "#{client_id}:#{client_secret}"
