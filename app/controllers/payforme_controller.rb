@@ -11,7 +11,7 @@ class PayformeController < ApplicationController
 
     order = Order.new(p, o_id)
 
-    m = UserMailer.email_to_mom e, order
+    m = UserMailer.email_to_mom(e, payment)
     m.deliver
 
     respond_to do |format|
