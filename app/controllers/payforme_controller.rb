@@ -4,6 +4,7 @@ class PayformeController < ApplicationController
   respond_to :json
 
   def authorize
+    n = params['name']
     e = params['email']
     o_id = params['orderId']
     p = params['projectKey']
