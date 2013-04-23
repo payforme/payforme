@@ -1,0 +1,10 @@
+<h1>
+List of all payments for debugging:
+</h1>
+<ul>
+  <% @payments.each do |payment| %>
+    <li>
+      Sphere ID: <%= payment.sphere_id %>
+    </li> 
+  <% end %>
+</ul>
