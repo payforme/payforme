@@ -21,4 +21,11 @@ describe Sphere do
     o = Sphere.get_order(t, @proj, o_id)
     o['id'].should eq o_id
   end
+
+  describe 'update order' do
+    Excon.stub(
+      { :method => :post, :path => '/my-proj/orders/myOrder' },
+      { :status => 200, :body => '{}' })
+    Sphere.update_payment_state '123', 'my-proj', 'myOrder', 'Paid'
+  end
 end
