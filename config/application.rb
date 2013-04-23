@@ -56,6 +56,8 @@ module Payforme
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    Paymill.api_key = "72337d84406411de5b1ad2d7eb774e81"
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     config.action_mailer.perform_deliveries = true 

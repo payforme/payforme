@@ -6,6 +6,9 @@ defaults: &defaults
   mailjet:
     client_id: '0dfab62840924da7708f42de91bbbbc4'
     client_secret: '1f83f7ca104199827e0ca980dbe35179'
+  paymill:
+    client_id: '9751984121446d1e13b280f809194a53'
+    client_secret: '72337d84406411de5b1ad2d7eb774e81'
 
 development:
   <<: *defaults

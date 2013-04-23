@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'excon'
 gem 'mailjet'
 gem 'settingslogic'
+gem 'paymill'
 
 gem 'rspec-rails', :group => ['development', 'test']
 
