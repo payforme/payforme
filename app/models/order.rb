@@ -1,9 +1,18 @@
-class Order < ActiveRecord::Base
-  attr_accessible :data, :sphere_id
+require 'sphere'
+
+class Order
+
+  def initialize(project_key, sphere_order_id)
+    @sphere_order_id = sphere_order_id
+    @project_key = project_key
+    client_id = Settings.sphere.client_id
+    client_secret = Settings.sphere.client_secret
+    @token = Sphere.login(client_id, client_secret, @project_key)
+    @order_data_hash = Sphere.get_order(@token, @project_key, @sphere_order_id)
+  end
 
   def to_struct
-    order_hash = JSON.parse data
-    convert_to_ostruct_recursive(order_hash, options = {})
+    convert_to_ostruct_recursive(@order_data_hash, options = {})
   end
 
   private
