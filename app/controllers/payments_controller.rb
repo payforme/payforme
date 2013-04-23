@@ -4,4 +4,8 @@ class PaymentsController < ApplicationController
     @payments = Payment.all
   end
 
+  def charge
+  	logger.info(params)
+  end
+
 end
