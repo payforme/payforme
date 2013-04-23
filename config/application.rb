@@ -61,5 +61,13 @@ module Payforme
     config.action_mailer.perform_deliveries = true 
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.delivery_method = :mailjet
+    config.generators do |g|
+      g.orm :active_record
+      g.template_engine :erb
+      g.test_framework :rspec
+      g.fixture_replacement :factory_girl
+      g.fallbacks[:rspec] = :test_unit
+      g.stylesheets false
+    end
   end
 end

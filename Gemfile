@@ -8,7 +8,9 @@ gem 'rails', '3.2.12'
 gem 'mysql2'
 gem 'excon'
 gem 'mailjet'
+gem 'settingslogic'
 
+gem 'rspec-rails', :group => ['development', 'test']
 
 # Gems used only for assets and not required
 # in production environments by default.
