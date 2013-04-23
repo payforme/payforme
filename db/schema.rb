@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20130423181241) do
   end
 
   create_table "payments", :force => true do |t|
-    t.string   "shpere_id"
+    t.string   "sphere_id"
     t.string   "payers_mail"
     t.string   "payers_name"
     t.integer  "shop_id"
