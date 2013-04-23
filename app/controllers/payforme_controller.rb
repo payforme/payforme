@@ -4,18 +4,23 @@ class PayformeController < ApplicationController
   respond_to :json
 
   def authorize
-    n = params['name']
-    e = params['email']
+
     o_id = params['orderId']
     p = params['projectKey']
 
-    order = Order.new(p, o_id)
+    shop = Shop.find_by_project_key(params['projectKey'])
+    payment = Payment.new(
+      :payers_name => params['name'],
+      :payers_mail => param['email'],
+      :sphere_order_id => params[:orderId],
+      :shop => shop)
+    if payment.save
+      m = UserMailer.email_to_mom(e, payment)
+      m.deliver
 
-    m = UserMailer.email_to_mom(e, payment)
-    m.deliver
-
-    respond_to do |format|
-      format.json { render :json => 'OK' }
+      respond_to do |format|
+        format.json { render :json => 'OK' }
+      end
     end
   end
 end
