@@ -1,0 +1,14 @@
+---
+defaults: &defaults
+  sphere:
+    client_id: 'fJVOsIBb4cQ8ShBJbjIFghUR'
+    client_secret: 'A5QTCj1OnhTK6jNAjH1KAsaJp3J9t3Zl'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
