@@ -1,3 +1,3 @@
 class Payment < ActiveRecord::Base
-  attr_accessible :payers_mail, :payers_name, :shop, :shpere_id
+  attr_accessible :payers_mail, :payers_name, :shop, :sphere_id
 end

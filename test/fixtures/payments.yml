@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  shpere_id: MyString
+  sphere_id: MyString
   payers_mail: MyString
   payers_name: MyString
-  shop: 
+  shop:
 
 two:
-  shpere_id: MyString
+  sphere_id: MyString
   payers_mail: MyString
   payers_name: MyString
-  shop: 
+  shop:
