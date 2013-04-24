@@ -14,6 +14,7 @@ class PaymentsController < ApplicationController
     payment = Payment.find_by_token params[:token]
     payment.rejected_at = Time.now
 
+    # send mail
     order = payment.order.to_struct
     buyer_mail = order.shippingAddress.email
     buyer_name = order.shippingAddress.firstName
@@ -21,6 +22,12 @@ class PaymentsController < ApplicationController
     mail.deliver
 
     payment.save
+
+    # update order in sphere.io
+    client_id = payment.shop.sphere_client_id
+    client_secret = payment.shop.sphere_client_secret
+    sphere_login_token = Sphere.login(client_id, client_secret, payment.shop.project_key)
+    Sphere.update_payment_state(sphere_login_token, payment.shop.project_key, payment.sphere_order_id, 'Failed')
   end
 
   def handle
@@ -50,12 +57,14 @@ class PaymentsController < ApplicationController
       @payment.paymill_transaction_id = answer['data']['id']
       @payment.save
 
+      # send mail
       order = @payment.order.to_struct
       buyer_mail = order.shippingAddress.email
       buyer_name = order.shippingAddress.firstName
       mail = UserMailer.paid(buyer_mail, buyer_name)
       mail.deliver
 
+      # update order in sphere.io
       client_id = @payment.shop.sphere_client_id
       client_secret = @payment.shop.sphere_client_secret
       sphere_login_token = Sphere.login(client_id, client_secret, @payment.shop.project_key)
