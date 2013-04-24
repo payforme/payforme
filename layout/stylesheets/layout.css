@@ -96,7 +96,7 @@ header h1.logo a {
 
 /* =main */
 section {
-	padding: 14px 0 21px 0;
+	padding: 14px 0 0 0;
 	background: url(../img/bgpage.png);
 }
 
@@ -145,6 +145,29 @@ section h3 {
 
 .paymill {
 	margin: 14px 0 0 0;
+	background: #fff;
+	padding: 14px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-ms-border-radius: 7px;
+	border-radius: 7px;
+	
+	-webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
+	
+}
+
+.paymill h3 {
+	margin: 0 0 14px 0;
+	padding: 0;
+	height: 29px;
+	width: 129px;
+	background: url(../img/paymill.png) no-repeat 0 0;
+	
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;	
 }
 
 
@@ -152,7 +175,7 @@ section h3 {
 
 .ffooter {
 	margin: 35px 0 0 0;
-	padding: 7px 0 35px 0;
+	padding: 14px 0 7px 0;
 	border-top: 2px solid #141414;
 	background: #000;
 	background: url(../img/bgfooter.png);
@@ -334,51 +357,6 @@ ul.categories li a:hover,
 ul.categories li a:active {
 	background: #fff;
 }
-
-
-
-
-/* #Login page
-================================================== */
-
-h3.lbutton {
-	margin: 7px 0 210px 0;
-	float: left;
-}
-
-h3.lbutton a {
-	margin: 7px 0;
-	padding: 0;
-	width: 358px;
-	height: 50px;
-	display: block;
-	background: url(../img/connect_evernote_button.png) no-repeat 0 0;
-	
-	font: 0/0 a;
-	text-shadow: none;
-	color: transparent;
-		
-}
-
-h3.lbutton a:hover {
-	margin: 7px 0;
-	padding: 0;
-	width: 358px;
-	height: 50px;
-	display: block;
-	background: url(../img/connect_evernote_button.png) no-repeat 0 0;
-	
-	font: 0/0 a;
-	text-shadow: none;
-	color: transparent;
-	
-	-webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
-	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
-		
-}
-
-
 
 
 /* #Media Queries
