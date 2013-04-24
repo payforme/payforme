@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424091334) do
+ActiveRecord::Schema.define(:version => 20130424093247) do
 
   create_table "payments", :force => true do |t|
     t.string   "sphere_order_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20130424091334) do
     t.string   "paymill_private_key"
     t.string   "sphere_client_id"
     t.string   "sphere_client_secret"
+    t.string   "paymill_public_key"
   end
 
   create_table "users", :force => true do |t|
