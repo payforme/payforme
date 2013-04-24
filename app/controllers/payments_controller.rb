@@ -14,8 +14,10 @@ class PaymentsController < ApplicationController
     payment = Payment.find_by_token params[:token]
     payment.rejected_at = Time.now
 
-    buyer_mail = 'mathias@musterdenker.de' #TODO get mail from order object
-    mail = UserMailer.not_paid(buyer_mail, @payment)
+    order = payment.order.to_struct
+    buyer_mail = order.shippingAddress.email
+    buyer_name = order.shippingAddress.firstName
+    mail = UserMailer.not_paid(buyer_mail, buyer_name)
     mail.deliver
 
     payment.save
@@ -48,8 +50,10 @@ class PaymentsController < ApplicationController
       @payment.paymill_transaction_id = answer['data']['id']
       @payment.save
 
-      buyer_mail = 'mathias@musterdenker.de' #TODO get mail from order object
-      mail = UserMailer.paid(buyer_mail, @payment)
+      order = @payment.order.to_struct
+      buyer_mail = order.shippingAddress.email
+      buyer_name = order.shippingAddress.firstName
+      mail = UserMailer.paid(buyer_mail, buyer_name)
       mail.deliver
 
       client_id = @payment.shop.sphere_client_id

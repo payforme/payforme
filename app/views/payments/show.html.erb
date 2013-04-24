@@ -1,7 +1,41 @@
 <div class="page-header">
   <h1>Hello: <%= @payment.payers_name %> <small>Payment Request</small></h1>
 </div>
-<div class="payment-errors">errors? </div>
+<% order_struct = @payment.order.to_struct %>
+<div class="well">
+  <% shipping = order_struct.shippingAddress %>
+  <h3>Shipping Address</h3>
+  <address>
+  <strong><%= shipping.firstName %> <%= shipping.lastName %></strong><br>
+  <%= shipping.streetName %> <%= shipping.streetNumber %><br>
+  <%= shipping.postalCode %> <%= shipping.city %><br>
+  <abbr title="Phone">P:</abbr> <%= shipping.phone %>
+</address>
+</div>
+
+<table class="table table-hover">
+  <tbody>
+
+    <% order_struct.lineItems.each do |line_item| %>
+    <tr>
+      <td>
+      <% image = line_item.variant.images.first %>
+      <img class="media-object" style="width:100px;" src="<%= image.url %>">
+    </td>
+    <td><%= line_item.name %></td>
+    <td><%= nicer_price(line_item.price.value.centAmount) %> <%= line_item.price.value.currencyCode %></td>
+    <td><%= line_item.quantity %></td>
+    <td><%= nicer_price(line_item.quantity * line_item.price.value.centAmount) %> <%= line_item.price.value.currencyCode %></td>
+    </tr>
+    <% end %>
+    <tr class="sum-row">
+      <td colspan="4">Total</td>
+      <td><%= nicer_price(order_struct.totalPrice.centAmount) %> <%= order_struct.totalPrice.currencyCode %></td>
+    </tr>
+  </tbody>
+</table>
+
+
 <script type="text/javascript">
   var PAYMILL_PUBLIC_KEY = "<%= @payment.shop.paymill_public_key %>";
 </script>
@@ -16,23 +50,23 @@
     <input class="card-number" type="text" size="20" required /></div>
 
   <div class="form-row"><label>CVC</label>
-    <input class="card-cvc" type="text" size="4" required /></div>
+    <input class="input-mini card-cvc" type="text" size="4" required /></div>
 
   <div class="form-row"><label>Name</label>
     <input class="card-holdername" type="text" size="4" /></div>
 
   <div class="form-row"><label>Expiry date (MM/YYYY)</label>
-    <input class="card-expiry-month" type="text" size="2" required/>
-    <span></span>
-    <input class="card-expiry-year" type="text" size="4" required/></div>
+    <input class="input-mini card-expiry-month" type="text" size="2" required/>
+    <span>/</span>
+    <input class="input-mini card-expiry-year" type="text" size="4" required/></div>
 
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-success">Pay It</button> <%= link_to "No, Thanks", url_for(:action => 'reject', :controller => 'payments', :token => @payment.token), :class => 'btn btn-danger' %>
+
 
 </form>
 
 
-<%= link_to "nein danke", url_for(:action => 'reject', :controller => 'payments', :token => @payment.token), :class => 'btn btn-danger' %>
 
 <% content_for :additional_javascript do %>
   <script>

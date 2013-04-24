@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+table tr.sum-row{
+  background-color: #cccccc;
+  border-bottom: 1px solid #dddddd;
+}
