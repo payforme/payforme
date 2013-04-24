@@ -1,0 +1,15 @@
+class Payment < ActiveRecord::Base
+<<<<<<< HEAD
+  attr_accessible :payers_mail, :payers_name, :shop, :shpere_id
+  belongs_to :shop
+  before_create :create_token
+
+
+  protected
+  def create_token
+    self.token = SecureRandom.hex(20)
+  end 
+=======
+  attr_accessible :payers_mail, :payers_name, :shop, :sphere_id
+>>>>>>> eaaa953085328301b0a2f9b8c1dda791c95312ce
+end

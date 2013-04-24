@@ -59,7 +59,7 @@ $(document).ready(function() {
     // Output token
     var token = result.token;
     // Insert token into form in order to submit to server
-    window.location = "/payment/<%= @payment.token %>/token/" + token;
+    window.location = "/payments/<%= @payment.token %>/" + token;
 //    form.append("<input type='hidden' name='paymillToken' value='" + token + "'/>");
   }
 }

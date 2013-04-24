@@ -12,4 +12,16 @@ class UserMailer < ActionMailer::Base
       logger.info(e)
     end
   end
+
+
+  #email to the buyer telling him that "mom" will not pay
+  def not_paid(email, payment)
+
+  end
+
+  #email to the buyer telling him that "mom" payed!
+  def paid(email, payment)
+
+  end
+
 end

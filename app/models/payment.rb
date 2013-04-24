@@ -1,5 +1,5 @@
 class Payment < ActiveRecord::Base
-  attr_accessible :payers_mail, :payers_name, :shop, :sphere_id
+  attr_accessible :payers_mail, :payers_name, :shop, :sphere_id, :paymill_token
   belongs_to :shop
   before_create :create_token
 

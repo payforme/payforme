@@ -1,5 +1,5 @@
 # MySQL.  Versions 4.1 and 5.0 are recommended.
-#
+# 
 # Install the MYSQL driver
 #   gem install mysql2
 #
@@ -15,9 +15,8 @@ development:
   database: payforme_development
   pool: 5
   username: root
-  password: root
-  host: localhost
-
+  password:
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,9 +28,7 @@ test:
   database: payforme_test
   pool: 5
   username: root
-  host: localhost
   password:
-
 
 production:
   adapter: mysql2
@@ -40,5 +37,5 @@ production:
   database: payforme_production
   pool: 5
   username: root
-  password: root
-  host: localhost
+  password:
+  socket: /tmp/mysql.sock

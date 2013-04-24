@@ -1,4 +1,8 @@
 Payforme::Application.routes.draw do
+  devise_for :users
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -52,9 +56,11 @@ Payforme::Application.routes.draw do
   root :to => 'payments#index'
 #  match 'payments/:id/charge' => 'payments#charge'
 
-  match 'payments/:token/:paymill_token' => 'payments#store_token'
-  
   match 'payments/:token' => 'payments#show'
+
+  match 'payments/:token/:paymill_token' => 'payments#handle'
+  
+  match 'thankyou' => 'payments#thankyou'
 
 
 

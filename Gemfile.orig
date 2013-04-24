@@ -6,9 +6,6 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
-gem "therubyracer"
-
 gem 'excon'
 gem 'mailjet'
 gem 'settingslogic'
@@ -30,15 +27,13 @@ end
 
 gem 'jquery-rails'
 
-gem "less-rails"
-gem 'twitter-bootstrap-rails'
-
-gem 'rails_admin'
-
 gem 'yajl-ruby'
 
-gem 'httpclient'
+<<<<<<< Updated upstream
+=======
+gem 'rest-client'
 
+>>>>>>> Stashed changes
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -53,6 +48,3 @@ gem 'httpclient'
 
 # To use debugger
 # gem 'debugger'
-
-
-gem "devise"
