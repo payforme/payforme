@@ -60,22 +60,22 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :shop, :belongs_to_association 
+  #     configure :shop, :belongs_to_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :sphere_id, :string 
-  #     configure :payers_mail, :string 
-  #     configure :payers_name, :string 
-  #     configure :shop_id, :integer         # Hidden 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :token, :string 
-  #     configure :paymill_token, :string 
-  #     configure :paid_at, :datetime 
-  #     configure :rejected_at, :datetime 
-  #     configure :paymill_transaction_id, :string 
+  #     configure :id, :integer
+  #     configure :sphere_id, :string
+  #     configure :payers_mail, :string
+  #     configure :payers_name, :string
+  #     configure :shop_id, :integer         # Hidden
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
+  #     configure :token, :string
+  #     configure :paymill_token, :string
+  #     configure :paid_at, :datetime
+  #     configure :rejected_at, :datetime
+  #     configure :paymill_transaction_id, :string
 
   #   # Cross-section configuration:
 
@@ -115,13 +115,13 @@ RailsAdmin.config do |config|
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :name, :string 
-  #     configure :project_key, :string 
-  #     configure :sphere_token, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :paymill_private_key, :string 
+  #     configure :id, :integer
+  #     configure :name, :string
+  #     configure :project_key, :string
+  #     configure :sphere_token, :string
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
+  #     configure :paymill_private_key, :string
 
   #   # Cross-section configuration:
 
