@@ -4,7 +4,7 @@
   <body style="background-color:#F7F7F7; font-family: 'Helvetica New', Arial, sans-serif; color: #6D778E; text-rendering: optimizeLegibility;">
     <div style="max-width:700px; margin:0 auto; text-align:center;">
       <div style="background-color:#FFFFFF; border:1px solid #C5CAD5; padding:30px; border-radius:3px;">
-        <h1 style="font-size:30px; font-weight:normal;">Hi there,</h1>
+        <h1 style="font-size:30px; font-weight:normal;">Hi Mum,</h1>
         <h3 style="font-weight:normal;"><span style="font-style:italic;"><%= @sender %></span> just made this order and wants you to pay for it.</h3>
         <div>
           <ul style="margin-left: 0; list-style: none;">
@@ -12,19 +12,16 @@
           <li style="line-height: 20px;">
             <div style="padding: 10px 5px; border-top: 1px solid #cbcbcb; font-size: 12px;">
               <div style="float: left; padding: 10px 0;">
-                <img src="<%= item.variant.featuredImage.url %>" />
+                <img src="<%= item.variant.images[0].url %>" style="width:150px;" />
               </div>
               <div style="padding-left: 170px;">
                 <div style="font-size: 12px;">
                   <ul style="float: right; display: table;">
                     <li style="padding: 0 20px; display: table-cell;">
-                      <%= item.price.value %>
+                      <%= item.price.value.centAmount.to_d / 100 %> <%= item.price.value.currencyCode %>
                     </li>
                     <li style="padding: 0 20px; display: table-cell;">
                       <%= item.quantity %>
-                    </li>
-                    <li style="padding: 0 20px; display: table-cell; color: #222222; font-size: 14px; font-weight: bold;">
-                      <%= item.totalPrice %>
                     </li>
                   </ul>
                   <div style="display: table-cell;">
@@ -37,13 +34,13 @@
           <% end %>
           </ul>
           <div style="padding: 20px; float: right;">
-            <div style="width: 350px;">
+            <div style="width: 250px;">
               <ul style="margin-left: 0; list-style: none;">
                 <li>
-                    Item total <span><%= @order.taxedPrice.totalNet %></span>
+                    Taxes <span><%= @order.taxedPrice.totalNet.centAmount.to_d / 100 %> <%= @order.taxedPrice.totalNet.currencyCode %></span>
                 </li>
                 <li style="color: #232f39; font-size: 18px; font-weight: bold; border-top-style: solid;">
-                    Total <span><%= @order.taxedPrice.totalGross %></span>
+                    Total <span><%= @order.totalPrice.centAmount.to_d / 100 %> <%= @order.totalPrice.currencyCode %></span>
                 </li>
               </ul>
             </div>
