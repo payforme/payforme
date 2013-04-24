@@ -5,6 +5,7 @@ class UserMailer < ActionMailer::Base
     @payment = payment
     @order = payment.order.to_struct
     @sender = payment.payers_name
+    @buyer = payment.buyers_name
     begin
       mail(:to => email, :subject => "Pay4Me request") do |format|
         format.text
