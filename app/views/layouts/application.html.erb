@@ -47,7 +47,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">Payforme</a>
+            <a class="brand" href="#"><span class="logo">Payforme</span></a>
             <div class="container nav-collapse">
               <ul class="nav">
               </ul>
@@ -55,22 +55,32 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row main">
         <div class="span9">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
         <div class="span3">
           <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <%= yield :sidebar %>
+            <h3>About</h3>
+            <p>
+            PayforMe lets you authorize and pay for orders in a secure and easy way. After a buyer selects PayforMe in the checkout process, we store the order and let you review all items and the shipping information.</p>
+            <p>
+              If everything is in order, enter the payment details you wish to use and authorize the payment. PayforMe then confirms the order, so that all goods are sent out as fast as possible to the buyer. </p>
+              <p>
+                Should you decide to cancel the order, there will be no charge to you and PayforMe will delete the original order.
+          </p>
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
 
-      <footer>
-        <p>&copy; Payforme 2013</p>
-      </footer>
+    <footer class="container ffooter">
+    <div class="row">          
+      <div class="span6 first-credit">
+        <p>&copy; PayforMe 2013 | An <a href="http://www.ecommhack.io/">ecommhack</a> hack.</p>
+      </div> <!-- end eight -->
+    </div>
+    </footer<!-- end container -->  
 
     </div> <!-- /container -->
 
