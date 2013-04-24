@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>PayforMe - Review the order</title>
+	<meta name="description" content="">
+	<meta name="author" content="jdk">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+</head>
+<body class="review">
+
+<div class="header">
+	<header class="container main">
+		<div class="sixteen columns alpha">
+			<h1 class="logo"><a href="#">PayforMe</a></h1>
+		</div>
+	</header> <!-- end container -->
+</div> <!-- end header -->
+
+<section>
+	<div class="container">
+		<div class="eleven columns alpha">
+<!--	{['kid']}  -->	
+		<h2>Confirm the order and pay</h2>
+			<div class="intro">
+				<p>{"shipping address" {"firstName"}} ({"shipping address" {"email"}}) created an order on Big Kahuna 
+				and would like you to confirm the order.</p>
+				<p>You can view the order below and pay using the secure PayforMe platform.</p>
+			</div> <!-- end intro -->
+		</div> <!-- end eleven cols -->		
+		
+		<div class="five columns omega">
+			<logo class="companylogo"><img src="img/companylogo.png" width="220" height="90" alt="companylogo" /></logo>
+		</div>	<!-- end five cols -->
+	</div> <!-- end container -->
+
+	<div class="container">
+		<div class="twelve columns alpha">
+			<h2 class="orderno">Order no. {"id"}</h2>
+			
+			<h3 class="shipping">Shipping address</h3>
+			<div class="shippinginfo">
+				<table>
+					<thead></thead>
+					<tbody>
+						<tr><th>Lilo Pelekai</th></tr>
+						<tr><th>123 Ocean Blvd</th></tr>						
+						<tr><th>Kauai 12455</th></tr>						
+					</tbody>
+
+				</table>
+			</div> <!-- end shipping -->
+						
+			<h3 class="createdate">Created {"createdAt"}</h3>
+			<div class="itemlist">
+				<table>
+					<thead>
+						<tr>
+							<th>Quantity</th>
+							<th>Item</th>	
+							<th>Price per item</th>	
+							<th>Total</th>														
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>{"lineItems" {"quantities"}x</th>
+							<th>{"lineItems" {"name"}</th>	
+							<th>{"lineItems" {"variant" {"prices" {"value" {"currencyCode"} {"centAmount"} }</th>					
+							<th>&euro; 51.60</th>									
+						</tr>
+						<tr>
+							<th>{"lineItems" {"quantities"}x</th>
+							<th>{"lineItems" {"name"}</th>	
+							<th>{"lineItems" {"variant" {"prices" {"value" {"currencyCode"} {"centAmount"} }</th>					
+							<th>&euro; 51.60</th>									
+						</tr>
+						<tr>
+							<th>Shipping</th>
+							<th></th>	
+							<th></th>					
+							<th>&euro; 4.95</th>									
+						</tr>	
+						<tr>
+							<th>total</th>
+							<th></th>	
+							<th></th>					
+							<th>&euro; 74.50</th>									
+						</tr>																							
+					</tbody>	
+				</table>
+			</div> <!-- end itemlist -->		
+		</div> <!-- end 12 cols-->
+	</div> <!-- end container -->		
+	
+	<div class="container">
+		<div class="five columns alpha decision">
+			<div class="submit">
+				<input type="submit" name="confirm" value="Purchase now via PayforMe" class="sbutton required" id="" />
+			</div>	<!-- end btn -->	
+		</div> <!-- six eight -->
+		
+		<div class="three columns decision">
+			<div class="cancelorder">
+				<input type="submit" name="cancel" value="Cancel order" class="cbutton required" id="" />
+			</div>
+		</div> <!-- end six -->	
+	</div>	<!-- end container -->
+	
+	<div class="container">
+		<div class="twelve columns alpha">
+			<div class="paymill">
+				<h3 class="paymilllogo">Paymill</h3>
+				<input type="text" name="" value="" placeholder="Name (replace w/ Paymill)" />
+				<input type="text" name="" value="" placeholder="Card number (replace w/ Paymill)" />				
+			</div>	
+		</div>
+	</div>
+	
+	<div class="band ffooter">
+		<footer class="container">					
+			<div class="eight columns first-credit">
+				<p>PayforMe 2013</p>
+			</div> <!-- end eight -->
+
+			<div class="eight columns last-credit">
+				<p>An <a href="http://www.ecommhack.io/">ecommhack</a> hack.</p>
+			</div>
+		</footer<!-- end container -->
+	</div><!-- end bottom band -->		
+
+
+
+</section>
+
+	<!-- JS
+	================================================== -->
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js/jquery.min.js"><\/script>')</script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
