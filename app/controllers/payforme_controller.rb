@@ -15,7 +15,7 @@ class PayformeController < ApplicationController
       :sphere_order_id => params[:orderId],
       :shop => shop)
     if payment.save
-      m = UserMailer.email_to_mom(e, payment)
+      m = UserMailer.email_to_mom(params['email'], payment)
       m.deliver
 
       respond_to do |format|

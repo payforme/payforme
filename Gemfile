@@ -43,6 +43,9 @@ gem 'yajl-ruby'
 
 gem 'httpclient'
 
+# Forms - https://github.com/plataformatec/simple_form/
+gem "simple_form"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
