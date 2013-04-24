@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424093247) do
+ActiveRecord::Schema.define(:version => 20130424113955) do
 
   create_table "payments", :force => true do |t|
     t.string   "sphere_order_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130424093247) do
     t.datetime "paid_at"
     t.datetime "rejected_at"
     t.string   "paymill_transaction_id"
+    t.string   "buyers_name"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
