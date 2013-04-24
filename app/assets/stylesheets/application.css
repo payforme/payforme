@@ -23,8 +23,8 @@ table tr.sum-row{
 min-height: 100%;
 height: auto !important;
 height: 100%;
-margin: 0 auto -35px;
+margin: 0 auto -80px;
 }
 #footer, #push {
-height: 35px;
+height: 80px;
 }
