@@ -23,14 +23,14 @@
       <img class="media-object" style="width:100px;" src="<%= image.url %>">
     </td>
     <td><%= line_item.name %></td>
-    <td><%= line_item.price.value.centAmount %> <%= line_item.price.value.currencyCode %></td>
+    <td><%= nicer_price(line_item.price.value.centAmount) %> <%= line_item.price.value.currencyCode %></td>
     <td><%= line_item.quantity %></td>
-    <td><%= line_item.quantity * line_item.price.value.centAmount %> <%= line_item.price.value.currencyCode %></td>
+    <td><%= nicer_price(line_item.quantity * line_item.price.value.centAmount) %> <%= line_item.price.value.currencyCode %></td>
     </tr>
     <% end %>
     <tr class="sum-row">
       <td colspan="4">Total</td>
-      <td><%= order_struct.totalPrice.centAmount %> <%= order_struct.totalPrice.currencyCode %></td>
+      <td><%= nicer_price(order_struct.totalPrice.centAmount) %> <%= order_struct.totalPrice.currencyCode %></td>
     </tr>
   </tbody>
 </table>
