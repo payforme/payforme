@@ -14,7 +14,7 @@ class PaymentsController < ApplicationController
     payment = Payment.find_by_token params[:token]
     payment.rejected_at = Time.now
 
-    order = @payment.order.to_struct
+    order = payment.order.to_struct
     buyer_mail = order.shippingAddress.email
     buyer_name = order.shippingAddress.firstName
     mail = UserMailer.not_paid(buyer_mail, buyer_name)
