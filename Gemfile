@@ -7,6 +7,10 @@ gem 'rails', '3.2.12'
 
 gem 'mysql2'
 
+group :production do
+  gem 'pg'
+end
+
 gem "therubyracer"
 
 gem 'excon'
