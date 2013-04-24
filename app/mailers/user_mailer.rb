@@ -18,8 +18,8 @@ class UserMailer < ActionMailer::Base
 
 
   #email to the buyer telling him that "mom" will not pay
-  def not_paid(email, payment)
-
+  def not_paid(email, name)
+    @name = name
   	begin
       mail(:to => email, :subject => "Pay4Me request rejected") do |format|
         format.text
@@ -32,8 +32,8 @@ class UserMailer < ActionMailer::Base
   end
 
   #email to the buyer telling him that "mom" payed!
-  def paid(email, payment)
-
+  def paid(email, name)
+    @name = name
   	begin
       mail(:to => email, :subject => "Pay4Me request approved") do |format|
         format.text
