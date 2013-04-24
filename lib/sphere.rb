@@ -19,7 +19,7 @@ class Sphere
 
   def self.update_payment_state(access_token, project_key, order_id, payment_state)
     res = Excon.post "https://api.sphere.io/#{project_key}/orders/#{order_id}", :headers => head(access_token),
-      :body => '{"action":"changePaymentState","paymentState":"payment_state"}'
+      :body => "{\"action\":\"changePaymentState\",\"paymentState\":\"#{payment_state}\"}"
   end
 
   private
