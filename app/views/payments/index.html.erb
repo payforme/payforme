@@ -4,7 +4,7 @@ List of all payments for debugging:
 <ul>
   <% @payments.each do |payment| %>
     <li>
-      Sphere ID: <%= payment.sphere_id %>
+      Sphere ID: <%= payment.sphere_id %> / <%= payment.token%>
     </li> 
   <% end %>
 </ul>

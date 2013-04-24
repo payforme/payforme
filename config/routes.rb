@@ -62,6 +62,8 @@ Payforme::Application.routes.draw do
   
   match 'thankyou' => 'payments#thankyou'
 
+  match 'reject/:token' => 'payments#reject'
+
 
 
   # See how all your routes lay out with "rake routes"
