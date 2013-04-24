@@ -11,7 +11,7 @@ class PayformeController < ApplicationController
     shop = Shop.find_by_project_key(params['projectKey'])
     payment = Payment.new(
       :payers_name => params['name'],
-      :payers_mail => param['email'],
+      :payers_mail => params['email'],
       :sphere_order_id => params[:orderId],
       :shop => shop)
     if payment.save
