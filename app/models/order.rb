@@ -7,6 +7,9 @@ class Order
     @project_key = shop.project_key
     client_id = shop.sphere_client_id
     client_secret = shop.sphere_client_secret
+    Rails.logger.debug "sphere_client_id: #{shop.sphere_client_id}"
+    Rails.logger.debug "sphere_client_secret: #{shop.sphere_client_secret}"
+    Rails.logger.debug "project_key: #{shop.project_key}"
     @token = Sphere.login(client_id, client_secret, @project_key)
     @order_data_hash = Sphere.get_order(@token, @project_key, @sphere_order_id)
   end
