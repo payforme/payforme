@@ -4,7 +4,6 @@ class Payment < ActiveRecord::Base
   before_create :create_token
 
   def order
-    shop = payment.shop
     Order.new(shop, sphere_order_id)
   end
 
