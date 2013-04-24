@@ -5,7 +5,7 @@ class Payment < ActiveRecord::Base
 
   def order
     shop = payment.shop
-    Order.new(shop.project_key, sphere_order_id)
+    Order.new(shop, sphere_order_id)
   end
 
   protected

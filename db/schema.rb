@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424004445) do
+ActiveRecord::Schema.define(:version => 20130424091334) do
 
   create_table "payments", :force => true do |t|
     t.string   "sphere_order_id"
     t.string   "payers_mail"
     t.string   "payers_name"
     t.integer  "shop_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "token"
     t.string   "paymill_token"
     t.datetime "paid_at"
@@ -44,9 +44,11 @@ ActiveRecord::Schema.define(:version => 20130424004445) do
     t.string   "name"
     t.string   "project_key"
     t.string   "sphere_token"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "paymill_private_key"
+    t.string   "sphere_client_id"
+    t.string   "sphere_client_secret"
   end
 
   create_table "users", :force => true do |t|
