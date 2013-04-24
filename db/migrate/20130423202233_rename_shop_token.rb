@@ -4,5 +4,6 @@ class RenameShopToken < ActiveRecord::Migration
   end
 
   def down
+    rename_column :shops, :project_key, :shop_token
   end
 end

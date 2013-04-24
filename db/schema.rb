@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(:version => 20130424004445) do
 
   create_table "payments", :force => true do |t|
-    t.string   "sphere_id"
+    t.string   "sphere_order_id"
     t.string   "payers_mail"
     t.string   "payers_name"
     t.integer  "shop_id"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "token"
     t.string   "paymill_token"
     t.datetime "paid_at"
