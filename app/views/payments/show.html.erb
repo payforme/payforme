@@ -1,5 +1,6 @@
-hallo: <%= @payment.payers_name %>, zahl das:
-<br>
+<div class="page-header">
+  <h1>Hello: <%= @payment.payers_name %> <small>Payment Request</small></h1>
+</div>
 <div class="payment-errors">errors? </div>
 <script type="text/javascript">
   var PAYMILL_PUBLIC_KEY = "<%= @payment.shop.paymill_public_key %>";
@@ -8,8 +9,8 @@ hallo: <%= @payment.payers_name %>, zahl das:
 
 <form id="payment-form" action="#" method="POST">
 
-  <input class="card-amount-int" type="hidden" value="<%= @amount %>" />
-  <input class="card-currency" type="hidden" value="<%= @curr %>" />
+  <input class="card-amount-int" type="hidden" value="<%= @order_struct.totalPrice.centAmount %>" />
+  <input class="card-currency" type="hidden" value="<%= @order_struct.totalPrice.currencyCode %>" />
 
   <div class="form-row"><label>Card number</label>
     <input class="card-number" type="text" size="20" required /></div>
@@ -31,7 +32,7 @@ hallo: <%= @payment.payers_name %>, zahl das:
 </form>
 
 
-<%= link_to "nein danke", url_for(:action => 'reject', :controller => 'payments', :token => @payment.token), :class => 'btn btn-danger' %> 
+<%= link_to "nein danke", url_for(:action => 'reject', :controller => 'payments', :token => @payment.token), :class => 'btn btn-danger' %>
 
 <% content_for :additional_javascript do %>
   <script>
@@ -45,7 +46,7 @@ hallo: <%= @payment.payers_name %>, zahl das:
         exp_month: $('.card-expiry-month').val(),   // required
         exp_year: $('.card-expiry-year').val(),     // required, vierstellig z.B. "2016"
         cvc: $('.card-cvc').val(),                  // required
-        amount_int: $('.card-amount-int').val(),    // required, integer, z.B. "15" für 0,15 Euro 
+        amount_int: $('.card-amount-int').val(),    // required, integer, z.B. "15" für 0,15 Euro
         currency: $('.card-currency').val(),    // required, ISO 4217 z.B. "EUR" od. "GBP"
         cardholder: $('.card-holdername').val() // optional
       }, PaymillResponseHandler);                   // Info dazu weiter unten

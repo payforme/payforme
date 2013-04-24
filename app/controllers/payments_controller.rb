@@ -2,21 +2,15 @@ require 'sphere'
 
 class PaymentsController < ApplicationController
 
-  def index
-    @payments = Payment.all
-  end
-
   def charge
-  	logger.info(params)
+	logger.info(params)
   end
 
-  def show  
+  def show
     @payment = Payment.find_by_token params[:token]
 
     #TEMP
-    @amount = 123
-    @curr = 'EUR'
-
+    @order_struct = @payment.order.to_struct
   end
 
   # mom doesn't want to pay
@@ -53,7 +47,7 @@ class PaymentsController < ApplicationController
         }
     answer = JSON.parse(client.post(endpoint, query).body)
 
-    if answer['data'] && answer['data']['status'] == 'closed' 
+    if answer['data'] && answer['data']['status'] == 'closed'
       @payment.paid_at = Time.now
       @payment.paymill_transaction_id = answer['data']['id']
       @payment.save
