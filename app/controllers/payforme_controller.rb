@@ -16,7 +16,7 @@ class PayformeController < ApplicationController
       :sphere_order_id => params[:orderId])
     payment.shop = shop
     if payment.save
-      m = UserMailer.email_to_mom(params['email'], payment)
+      m = UserMailer.email_to_mom(params['payersEmail'], payment)
       m.deliver
       respond_to do |format|
         format.json { render :json => 'OK' }

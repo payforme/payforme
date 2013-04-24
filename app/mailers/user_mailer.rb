@@ -1,10 +1,11 @@
 class UserMailer < ActionMailer::Base
+  add_template_helper(ApplicationHelper)
   default :from => "me@nicolasgrenie.com"
 
   def email_to_mom(email, payment)
     @payment = payment
     @order = payment.order.to_struct
-    @sender = payment.payers_name
+    @payer = payment.payers_name
     @buyer = payment.buyers_name
     begin
       mail(:to => email, :subject => "Pay4Me request") do |format|
