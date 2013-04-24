@@ -1,0 +1,419 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+/* Table of Content
+==================================================
+	#Typography
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+
+/* #Typography / baseline corrections
+================================================== */
+
+h1 { line-height: 49px; margin-bottom: 14px; }
+h2 { line-height: 42px; margin-bottom: 7px; }
+h3 { line-height: 35px; margin-bottom: 7px; }
+h4 { line-height: 28px; margin-bottom: 7px; }
+h5 { line-height: 21px;  }
+
+p { margin: 0 0 21px 0; }
+p.lead { line-height: 28px; }
+
+blockquote, blockquote p { line-height: 21px; }
+blockquote { margin: 0 0 21px; padding: 7px 20px 0 19px; }
+
+hr { margin: 14px 0 28px; }
+ 
+ul, ol { margin-bottom: 21px;}
+ul ul, ul ol,
+ol ol, ol ul { margin: 7px 0 7px 30px; }
+ul ul li, ul ol li,
+ol ol li, ol ul li { margin-bottom: 7px; }
+li { line-height: 21px; margin-bottom: 14px; }
+
+
+/* #font-face
+================================================== */
+
+
+/* #Site Styles
+================================================== */
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+/* bands */
+
+.header {
+	position: relative;
+	z-index: 400;
+	/* border-bottom: 1px solid #262626; */
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+header.main {
+	padding: 7px 0;
+}
+
+header h1.logo {
+	margin: 7px 0 0 0;
+	padding: 0 0 7px 0;
+	float: left;
+}
+
+header h1.logo a {
+	margin: 0;
+	padding: 0;
+	width: 202px;
+	height: 38px;
+	display: block;
+	background: url(../img/logo.png) no-repeat 0 0;
+	
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+
+/* =main */
+section {
+	padding: 14px 0 21px 0;
+	background: url(../img/bgpage.png);
+}
+
+section h2,
+section h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 28px;
+	color: #262626;
+	margin-bottom: 7px;
+}
+
+section h2.orderno {
+	font-size: 35px;
+	margin-bottom: 0;
+}
+
+section h3 {
+	font-size: 14px;
+	margin-bottom: 0;	
+}
+
+/* shipping info */
+.titlerow {
+	font-weight: bold;
+	color: #262626;
+}
+
+.shippinginfo {
+	margin: 0 0 14px 0;
+}
+
+.shippinginfo table,
+.itemlist table {
+	text-align: left;
+}
+
+.shippinginfo table tr:first-child {
+	font-weight: bold;
+}
+
+/* set top margin above decision buttons */
+.decision {
+	margin: 14px 0 0 0;
+}
+
+.paymill {
+	margin: 14px 0 0 0;
+}
+
+
+/* =footer */
+
+.ffooter {
+	margin: 35px 0 0 0;
+	padding: 7px 0 35px 0;
+	border-top: 2px solid #141414;
+	background: #000;
+	background: url(../img/bgfooter.png);
+	color: #fff;
+	
+}
+
+.ffooter .last-credit {
+	text-align: right;
+}
+
+.ffooter a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.ffooter a:hover {
+	-webkit-text-shadow: 0px 2px 15px rgba(255, 255, 255, 0.9);
+	-moz-text-shadow: 0px 2px 15px rgba(255, 255, 255, 0.9));
+	text-shadow: 0px 2px 15px rgba(255, 255, 255, 0.9);
+}
+
+
+/* =input =button */
+
+input.sbutton {
+	margin: 4px 0 7px 0;
+	background-image: linear-gradient(bottom, rgb(27,115,59) 0%, rgb(29,187,85) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(27,115,59) 0%, rgb(29,187,85) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(27,115,59) 0%, rgb(29,187,85) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(27,115,59) 0%, rgb(29,187,85) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(27,115,59) 0%, rgb(29,187,85) 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(27,115,59)),
+		color-stop(1, rgb(29,187,85))
+		);
+		
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .5);
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 44px;
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2), inset 0px 1px 1px rgba(255, 255, 255, 0.5);
+	-moz-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2), inset 0px 1px 1px rgba(255, 255, 255, 0.5);
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2), inset 0px 1px 1px rgba(255, 255, 255, 0.5);
+	top: -1px;
+	position: relative;			
+}
+
+input.sbutton:active {
+background-image: linear-gradient(bottom, rgb(26,102,52) 100%, rgb(23,143,65) 0%);
+background-image: -o-linear-gradient(bottom, rgb(26,102,52) 100%, rgb(23,143,65) 0%);
+background-image: -moz-linear-gradient(bottom, rgb(26,102,52) 100%, rgb(23,143,65) 0%);
+background-image: -webkit-linear-gradient(bottom, rgb(26,102,52) 100%, rgb(23,143,65) 0%);
+background-image: -ms-linear-gradient(bottom, rgb(26,102,52) 100%, rgb(23,143,65) 0%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(1, rgb(26,102,52)),
+	color-stop(0, rgb(23,143,65))
+);
+	
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px rgba(255, 255, 255, .3);
+
+}
+
+input.sbutton:hover {
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px rgba(255, 255, 255, .3);
+}
+
+
+input.cbutton,
+input.cbutton:active {
+	margin: 4px 0 7px 0;
+	background: #fff;
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 14px;
+	height: 24px;
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	border: 0px;
+	cursor: pointer;
+	top: -1px;
+	position: relative;			
+}
+
+input.cbutton:hover,
+input.cbutton:active {
+	text-decoration: underline;
+}
+
+
+/* #Page Styles
+================================================== */
+
+/* forms */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+
+input[type="search"]:focus {
+	outline: none;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+	width: 100%;
+}
+
+.search input[type="search"],
+.subscribe input[type="email"] {
+	width: 70%;
+	float: left;
+	margin: 0;
+}
+.search button,
+.subscribe button {
+	width: 28%;
+	float: right;
+	margin: 0;
+	padding: 7px 10px;
+}
+
+ul.categories {
+	margin: 0;
+}
+
+ul.categories li {
+	border-bottom: 1px dashed #e5e5e5;
+	margin: 0;
+}
+
+ul.categories li a {
+	text-decoration: none;
+	line-height: 35px;
+	display: block;
+}
+
+ul.categories li a:hover,
+ul.categories li a:active {
+	background: #fff;
+}
+
+
+
+
+/* #Login page
+================================================== */
+
+h3.lbutton {
+	margin: 7px 0 210px 0;
+	float: left;
+}
+
+h3.lbutton a {
+	margin: 7px 0;
+	padding: 0;
+	width: 358px;
+	height: 50px;
+	display: block;
+	background: url(../img/connect_evernote_button.png) no-repeat 0 0;
+	
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+		
+}
+
+h3.lbutton a:hover {
+	margin: 7px 0;
+	padding: 0;
+	width: 358px;
+	height: 50px;
+	display: block;
+	background: url(../img/connect_evernote_button.png) no-repeat 0 0;
+	
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	
+	-webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+		
+}
+
+
+
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+		
+		nav ul {
+			display: none;
+		}
+		
+		.ffooter footer {
+			text-align: center;
+		}
+		
+		.ffooter footer .last-credit {
+			text-align: center;
+		}
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
+
+
+/* #Font-Face
+================================================== */
+
+
