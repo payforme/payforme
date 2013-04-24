@@ -1,3 +1,60 @@
-<p>You kid wants...</p>
-<p><%= @payment.order.id %>
-<a href="http://heroku.com/payments/<%= @payment.token %>"</a>
+<html>
+  <head>
+  </head>
+  <body style="background-color:#F7F7F7; font-family: 'Helvetica New', Arial, sans-serif; color: #6D778E; text-rendering: optimizeLegibility;">
+    <div style="max-width:700px; margin:0 auto; text-align:center;">
+      <div style="background-color:#FFFFFF; border:1px solid #C5CAD5; padding:30px; border-radius:3px;">
+        <h1 style="font-size:30px; font-weight:normal;">Hi <%= @buyer %>,</h1>
+        <h3 style="font-weight:normal;"><span style="font-style:italic;"><%= @sender %></span> just made this order and wants you to pay for it.</h3>
+        <div>
+          <ul style="margin-left: 0; list-style: none;">
+          <% @order.lineItems.each do |item| %>
+          <li style="line-height: 20px;">
+            <div style="padding: 10px 5px; border-top: 1px solid #cbcbcb; font-size: 12px;">
+              <div style="float: left; padding: 10px 0;">
+                <img src="<%= item.variant.images[0].url %>" style="width:150px;" />
+              </div>
+              <div style="padding-left: 170px;">
+                <div style="font-size: 12px;">
+                  <ul style="float: right; display: table;">
+                    <li style="padding: 0 20px; display: table-cell;">
+                      <%= item.price.value.centAmount.to_d / 100 %> <%= item.price.value.currencyCode %>
+                    </li>
+                    <li style="padding: 0 20px; display: table-cell;">
+                      <%= item.quantity %>
+                    </li>
+                  </ul>
+                  <div style="display: table-cell;">
+                    <h5><%= item.productName %></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <% end %>
+          </ul>
+          <div style="padding: 20px; float: right;">
+            <div style="width: 250px;">
+              <ul style="margin-left: 0; list-style: none;">
+                <li>
+                    Taxes <span><%= @order.taxedPrice.totalNet.centAmount.to_d / 100 %> <%= @order.taxedPrice.totalNet.currencyCode %></span>
+                </li>
+                <li style="color: #232f39; font-size: 18px; font-weight: bold; border-top-style: solid;">
+                    Total <span><%= @order.totalPrice.centAmount.to_d / 100 %> <%= @order.totalPrice.currencyCode %></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="clear:both;"></div>
+        <div style="font-size:15px; text-align: left; margin-left: 10%;">
+          <p style="margin-bottom:5px;">Visit <a style="color: #00b5de;" href="http://payforme.hacktheapp.de/payments/<%= @payment.token %>">payforme.hacktheapp.de</a> to proceed with the final steps.</p>
+        </div>
+      </div><!-- /body -->
+      <div style="font-size: 14px; line-height: 20px; margin-top: 20px; color: #A3AEB8;">
+        <div style="border-top: 1px solid #cddce1; -webkit-box-shadow: 0 1px 0 0 #ffffff; -moz-box-shadow: 0 1px 0 0 #ffffff; box-shadow: 0 1px 0 0 #ffffff;"></div>
+        <p style="margin-bottom:5px;">&copy; 2013 <span style="color: #00b5de;">PayForMe</span></p>
+      </div><!-- /footer -->
+    </div>
+  </body>
+</html>
