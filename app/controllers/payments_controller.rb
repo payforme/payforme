@@ -2,10 +2,6 @@ require 'sphere'
 
 class PaymentsController < ApplicationController
 
-  def charge
-	logger.info(params)
-  end
-
   def show
     @payment = Payment.find_by_token params[:token]
 
