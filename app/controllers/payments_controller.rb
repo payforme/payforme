@@ -1,3 +1,5 @@
+require 'sphere'
+
 class PaymentsController < ApplicationController
 
   def index
@@ -59,6 +61,11 @@ class PaymentsController < ApplicationController
       buyer_mail = 'mathias@musterdenker.de' #TODO get mail from order object
       mail = UserMailer.paid(buyer_mail, @payment)
       mail.deliver
+
+      client_id = @payment.shop.sphere_client_id
+      client_secret = @payment.shop.sphere_client_secret
+      sphere_login_token = Sphere.login(client_id, client_secret, @payment.shop.project_key)
+      @order_data_hash = Sphere.update_payment_state(sphere_login_token, @payment.shop.project_key, @payment.sphere_order_id, 'Paid')
 
       redirect_to :action => 'thankyou'
     else

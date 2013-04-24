@@ -18,8 +18,13 @@ class Sphere
   end
 
   def self.update_payment_state(access_token, project_key, order_id, payment_state)
+      version = self.get_order(access_token, project_key, order_id)['version']
+
+
     res = Excon.post "https://api.sphere.io/#{project_key}/orders/#{order_id}", :headers => head(access_token),
-      :body => "{\"action\":\"changePaymentState\",\"paymentState\":\"#{payment_state}\"}"
+      :body => "{\"actions\":[{\"action\":\"changePaymentState\",\"paymentState\":\"#{payment_state}\"}],\"version\":#{version}}"
+
+
   end
 
   private
