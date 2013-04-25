@@ -9,10 +9,10 @@
         <div>
           <ul style="margin-left: 0; list-style: none;">
           <% @order.lineItems.each do |item| %>
-          <li style="line-height: 20px;">
+          <li style="line-height: 20px; clear:both;">
             <div style="padding: 10px 5px; border-top: 1px solid #cbcbcb; font-size: 12px;">
               <div style="float: left; padding: 10px 0;">
-                <img src="<%= item.variant.images[0].url %>" style="width:150px;" />
+                <img src="<%= item.variant.images[0].url %>" style="width:100px;" />
               </div>
               <div style="padding-left: 170px;">
                 <div style="font-size: 12px;">
